@@ -27,11 +27,11 @@ const ProgramPage: React.FC = () => {
                 Our programs and alliances open doors to unparalleled opportunities, empowering businesses to thrive in today's competitive landscape.
               </p>
             </div>
-            <div className="aspect-[4/3] bg-[#165a72] rounded-[2rem] overflow-hidden shadow-2xl">
+            <div className="aspect-[4/3] bg-[#165a72] overflow-hidden shadow-2xl">
               <img 
                 src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80" 
                 alt="Training Programs" 
-                className="w-full h-full object-cover grayscale brightness-110"
+                className="w-full h-full object-cover brightness-110"
               />
             </div>
           </div>
@@ -86,12 +86,12 @@ const ProgramPage: React.FC = () => {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {PROJECTS.map((project, i) => (
-              <div key={project.id} className="group relative overflow-hidden bg-white rounded-[1rem] shadow-sm hover:shadow-2xl transition-all duration-700">
+              <div key={project.id} className="group relative overflow-hidden bg-white shadow-sm hover:shadow-2xl transition-all duration-700">
                 <div className="aspect-[4/3] overflow-hidden">
                   <img 
                     src={project.image} 
                     alt={project.title}
-                    className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-1000"
+                    className="w-full h-full object-cover group-hover:scale-110 transition-all duration-1000"
                   />
                 </div>
                 <div className="p-8">

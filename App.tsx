@@ -28,7 +28,7 @@ const App: React.FC = () => {
     return (
       <div className="fixed inset-0 bg-white flex flex-col items-center justify-center z-[9999]">
         <motion.div initial={{ opacity: 0, scale: 0.98 }} animate={{ opacity: 1, scale: 1 }} className="text-center w-full max-w-sm px-12">
-          <img src="/brix-logo.png" className="h-24 mx-auto mb-16 grayscale" alt="BRIX" />
+          <img src="/brix-logo.png" className="h-24 mx-auto mb-16" alt="BRIX" />
           <div className="w-full h-[1px] bg-black/5 relative mb-4">
             <motion.div 
               className="absolute left-0 top-0 h-full bg-[#165a72]" 

@@ -136,8 +136,8 @@ const HomePage: React.FC<HomePageProps> = ({ setActivePage }) => {
               </h2>
               <div className="mt-16 relative group">
                  <div className="absolute -inset-4 bg-[#165a72]/10 rounded-3xl blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-                 <div className="relative aspect-[4/3] overflow-hidden rounded-[2rem] shadow-2xl border border-black/5">
-                    <img src="https://images.unsplash.com/photo-1581092921461-eab62e97a780?w=800&q=80" alt="BRIX Workspace" className="w-full h-full object-cover grayscale brightness-110" />
+                 <div className="relative aspect-[4/3] overflow-hidden shadow-2xl border border-black/5">
+                    <img src="https://images.unsplash.com/photo-1581092921461-eab62e97a780?w=800&q=80" alt="BRIX Workspace" className="w-full h-full object-cover brightness-110" />
                  </div>
               </div>
             </div>
@@ -153,8 +153,8 @@ const HomePage: React.FC<HomePageProps> = ({ setActivePage }) => {
                        <span className="text-[10px] font-bold tracking-[0.4em] uppercase text-[#165a72]">Vision</span>
                     </div>
                     <p className="text-black/80 leading-relaxed text-sm">To enable, excellence at each level, process and service delivery.</p>
-                    <div className="aspect-[4/3] overflow-hidden rounded-xl mt-6">
-                      <img src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=800&q=80" alt="Vision" className="w-full h-full object-cover grayscale brightness-110" />
+                    <div className="aspect-[4/3] overflow-hidden mt-6">
+                      <img src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=800&q=80" alt="Vision" className="w-full h-full object-cover brightness-110" />
                     </div>
                   </div>
                   <div className="space-y-6">
@@ -163,8 +163,8 @@ const HomePage: React.FC<HomePageProps> = ({ setActivePage }) => {
                        <span className="text-[10px] font-bold tracking-[0.4em] uppercase text-[#ed1c24]">Mission</span>
                     </div>
                     <p className="text-black/80 leading-relaxed text-sm">Premium Knowledge Transfer, innovation and professional service delivery that drives eminence.</p>
-                    <div className="aspect-[4/3] overflow-hidden rounded-xl mt-6">
-                      <img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=800&q=80" alt="Mission" className="w-full h-full object-cover grayscale brightness-110" />
+                    <div className="aspect-[4/3] overflow-hidden mt-6">
+                      <img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=800&q=80" alt="Mission" className="w-full h-full object-cover brightness-110" />
                     </div>
                   </div>
                 </div>
@@ -191,12 +191,12 @@ const HomePage: React.FC<HomePageProps> = ({ setActivePage }) => {
               { title: 'Domain Compliance', image: 'https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?w=600&q=80' },
               { title: 'Professional Services', image: 'https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?w=600&q=80' }
             ].map((service, i) => (
-              <div key={i} className="group relative overflow-hidden bg-white rounded-[1rem] shadow-sm hover:shadow-2xl transition-all duration-700">
+              <div key={i} className="group relative overflow-hidden bg-white shadow-sm hover:shadow-2xl transition-all duration-700">
                 <div className="aspect-[4/3] overflow-hidden">
                   <img 
                     src={service.image} 
                     alt={service.title}
-                    className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-1000"
+                    className="w-full h-full object-cover group-hover:scale-110 transition-all duration-1000"
                   />
                 </div>
                 <div className="p-6">

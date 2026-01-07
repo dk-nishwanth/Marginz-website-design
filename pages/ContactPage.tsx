@@ -56,7 +56,7 @@ const ContactPage: React.FC = () => {
             </h2>
           </div>
           
-          <div className="aspect-[16/9] rounded-[2rem] overflow-hidden shadow-2xl border border-black/5">
+          <div className="aspect-[16/9] overflow-hidden shadow-2xl border border-black/5">
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d248849.886539092!2d77.49085452148437!3d12.953945614117967!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae1670c9b44e6d%3A0xf8dfc3e8517e4fe0!2sBengaluru%2C%20Karnataka!5e0!3m2!1sen!2sin!4v1703123456789!5m2!1sen!2sin"
               width="100%"
