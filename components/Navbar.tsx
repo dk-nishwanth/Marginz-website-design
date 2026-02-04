@@ -21,7 +21,7 @@ const Navbar: React.FC<NavbarProps> = ({ activePage, setActivePage }) => {
   const menuItems = [
     { name: 'Home', id: 'home' },
     { name: 'About', id: 'about' },
-    { name: 'Services', id: 'services' },
+    { name: 'Our Team', id: 'team' },
     { name: 'Our Program', id: 'program' },
     { name: 'Career', id: 'career' },
     { name: 'Contact', id: 'contact' }

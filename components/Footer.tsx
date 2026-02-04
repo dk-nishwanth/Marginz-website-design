@@ -10,7 +10,7 @@ const Footer: React.FC<FooterProps> = ({ setActivePage }) => {
   const sections = [
     { name: 'Home', id: 'home' },
     { name: 'About', id: 'about' },
-    { name: 'Services', id: 'services' },
+    { name: 'Our Team', id: 'team' },
     { name: 'Our Program', id: 'program' },
     { name: 'Career', id: 'career' },
     { name: 'Contact', id: 'contact' }
@@ -30,7 +30,7 @@ const Footer: React.FC<FooterProps> = ({ setActivePage }) => {
           <div className="lg:col-span-6">
             <img src="/brix-logo.png" className="h-20 mb-12" alt="BRIX" />
             <h2 className="font-heading text-5xl md:text-7xl font-bold tracking-tighter uppercase mb-12 text-[#165a72]">
-              ADVANTAGE <br /><span className="text-black/5">IN KNOWLEDGE.</span>
+              ADVANTAGE <br /><span className="text-[#165a72]/40">IN KNOWLEDGE.</span>
             </h2>
             <div className="flex gap-10">
               {['LinkedIn', 'Instagram', 'Twitter'].map(s => (
@@ -40,7 +40,7 @@ const Footer: React.FC<FooterProps> = ({ setActivePage }) => {
           </div>
 
           <div className="lg:col-span-3">
-            <span className="text-[10px] font-bold tracking-[0.6em] text-black/40 uppercase mb-12 block">Structure</span>
+            <span className="text-[10px] font-bold tracking-[0.6em] text-[#165a72]/70 uppercase mb-12 block">Structure</span>
             <ul className="space-y-6">
               {sections.map(s => (
                 <li key={s.id}>
@@ -56,7 +56,7 @@ const Footer: React.FC<FooterProps> = ({ setActivePage }) => {
           </div>
 
           <div className="lg:col-span-3">
-            <span className="text-[10px] font-bold tracking-[0.6em] text-black/40 uppercase mb-12 block">Connect</span>
+            <span className="text-[10px] font-bold tracking-[0.6em] text-[#165a72]/70 uppercase mb-12 block">Connect</span>
             <div className="space-y-12">
               <div>
                 <p className="text-xs font-bold text-[#165a72] uppercase tracking-[0.4em] mb-4">India / Bangalore</p>
@@ -74,7 +74,7 @@ const Footer: React.FC<FooterProps> = ({ setActivePage }) => {
         </div>
 
         <div className="flex flex-col md:flex-row justify-between items-center pt-20 border-t border-black/5 gap-10">
-          <div className="text-[9px] font-bold text-black/40 uppercase tracking-[0.5em]">
+          <div className="text-[9px] font-bold text-[#165a72]/70 uppercase tracking-[0.5em]">
             Authorized Training Partner / Extreme Networks
           </div>
           <div className="text-[9px] font-bold tracking-[0.5em] text-[#165a72]/60 uppercase">

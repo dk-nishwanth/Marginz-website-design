@@ -9,6 +9,7 @@ export interface Project {
 
 export interface Service {
   id: string;
+  number: string;
   title: string;
   description: string;
   features: string[];
@@ -23,6 +24,25 @@ export interface Job {
   skills: string;
   qualification: string;
   salary: string;
+}
+
+export interface TeamMember {
+  id: string;
+  name: string;
+  position: string;
+  experience: string;
+  expertise: string;
+  bio: string;
+  certifications: string;
+}
+
+export interface ClientReview {
+  id: string;
+  name: string;
+  company: string;
+  position: string;
+  rating: number;
+  review: string;
 }
 
 
