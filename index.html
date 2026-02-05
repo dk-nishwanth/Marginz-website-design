@@ -34,6 +34,11 @@
             --brand-red: #ed1c24;
             --accent: #f8f9fa;
         }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
             background-color: var(--bg);
@@ -41,9 +46,11 @@
             overflow-x: hidden;
             -webkit-font-smoothing: antialiased;
         }
+        
         .font-heading {
             font-family: 'Space Grotesk', sans-serif;
         }
+        
         .grain {
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
@@ -89,6 +96,28 @@
         }
         .btn-brix:hover::after {
             left: 0;
+        }
+
+        /* Smooth scrolling animations */
+        @media (prefers-reduced-motion: no-preference) {
+            * {
+                scroll-behavior: smooth;
+            }
+        }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: var(--brand-teal);
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--brand-red);
         }
     </style>
 <script type="importmap">

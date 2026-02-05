@@ -64,7 +64,7 @@ const App: React.FC = () => {
   };
 
   return (
-    <div className="relative selection:bg-[#165a72] selection:text-white min-h-screen bg-white overflow-hidden">
+    <div className="relative selection:bg-[#165a72] selection:text-white min-h-screen bg-white overflow-hidden" style={{ scrollBehavior: 'smooth' }}>
       <Navbar activePage={activePage} setActivePage={setActivePage} />
       <main>
         {renderContent()}
