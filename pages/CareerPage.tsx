@@ -49,44 +49,44 @@ const CareerPage: React.FC = () => {
             </h2>
           </div>
 
-          <div className="max-w-4xl mx-auto space-y-12">
+          <div className="grid md:grid-cols-2 gap-12">
             {JOBS.map(job => (
-              <div key={job.id} className="p-16 border-l-8 border-[#165a72] bg-white hover:shadow-2xl transition-all group">
-                <div className="flex justify-between items-start mb-12">
-                  <div>
-                    <h3 className="font-heading text-4xl font-bold uppercase mb-4 text-[#165a72]">{job.title}</h3>
-                    <div className="flex items-center gap-8 mb-6">
+              <div key={job.id} className="p-12 border-l-8 border-[#165a72] bg-white hover:shadow-2xl transition-all group">
+                <div className="flex justify-between items-start mb-8">
+                  <div className="flex-1">
+                    <h3 className="font-heading text-2xl md:text-3xl font-bold uppercase mb-4 text-[#165a72]">{job.title}</h3>
+                    <div className="flex flex-col gap-2 mb-6">
                       <span className="text-[10px] font-bold tracking-widest text-[#ed1c24] uppercase">Experience: {job.experience}</span>
                       <span className="text-[10px] font-bold tracking-widest text-[#ed1c24] uppercase">Location: {job.location}</span>
                     </div>
                   </div>
                   <button 
                     onClick={() => setSelectedJob(job.id)}
-                    className="p-4 bg-[#165a72]/5 border border-[#165a72]/20 rounded-full hover:bg-[#ed1c24] hover:text-white transition-all"
+                    className="p-3 bg-[#165a72]/5 border border-[#165a72]/20 rounded-full hover:bg-[#ed1c24] hover:text-white transition-all flex-shrink-0"
                   >
-                     <ArrowUpRight size={24} />
+                     <ArrowUpRight size={20} />
                   </button>
                 </div>
                 
-                <div className="space-y-8">
+                <div className="space-y-6">
                   <div>
-                    <h4 className="font-heading text-lg font-bold uppercase mb-4 text-[#165a72]">Description</h4>
-                    <p className="text-lg text-black/80 leading-relaxed">{job.description}</p>
+                    <h4 className="font-heading text-base font-bold uppercase mb-3 text-[#165a72]">Description</h4>
+                    <p className="text-sm text-black/80 leading-relaxed">{job.description}</p>
                   </div>
                   
                   <div>
-                    <h4 className="font-heading text-lg font-bold uppercase mb-4 text-[#165a72]">Skills Required</h4>
-                    <p className="text-base text-black/70 leading-relaxed">{job.skills}</p>
+                    <h4 className="font-heading text-base font-bold uppercase mb-3 text-[#165a72]">Skills Required</h4>
+                    <p className="text-xs text-black/70 leading-relaxed">{job.skills}</p>
                   </div>
                   
-                  <div className="grid md:grid-cols-2 gap-8 pt-8 border-t border-black/10">
+                  <div className="grid grid-cols-2 gap-4 pt-6 border-t border-black/10">
                     <div>
-                      <h4 className="font-heading text-sm font-bold uppercase mb-2 text-[#165a72]">Qualification</h4>
-                      <p className="text-sm text-black/70">{job.qualification}</p>
+                      <h4 className="font-heading text-xs font-bold uppercase mb-2 text-[#165a72]">Qualification</h4>
+                      <p className="text-xs text-black/70">{job.qualification}</p>
                     </div>
                     <div>
-                      <h4 className="font-heading text-sm font-bold uppercase mb-2 text-[#165a72]">Salary</h4>
-                      <p className="text-sm text-black/70">{job.salary}</p>
+                      <h4 className="font-heading text-xs font-bold uppercase mb-2 text-[#165a72]">Salary</h4>
+                      <p className="text-xs text-black/70">{job.salary}</p>
                     </div>
                   </div>
                 </div>

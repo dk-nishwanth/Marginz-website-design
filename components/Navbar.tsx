@@ -100,7 +100,7 @@ const Navbar: React.FC<NavbarProps> = ({ activePage, setActivePage }) => {
                     initial={{ x: 50, opacity: 0 }}
                     animate={{ x: 0, opacity: 1 }}
                     transition={{ delay: 0.1 * i, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-                    className={`block font-heading text-6xl md:text-[10vw] font-bold tracking-tighter text-left uppercase leading-none hover:text-[#165a72] transition-all duration-500 ${activePage === item.id ? 'text-[#165a72]' : 'text-black/5'}`}
+                    className={`block font-heading text-6xl md:text-[10vw] font-bold tracking-tighter text-left uppercase leading-none hover:text-[#165a72] transition-all duration-500 ${activePage === item.id ? 'text-[#165a72]' : 'text-[#165a72]/40'}`}
                   >
                     {item.name}
                   </motion.button>
