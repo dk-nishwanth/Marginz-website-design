@@ -10,48 +10,48 @@ const ServicesPage: React.FC = () => {
   };
 
   return (
-    <div className="pt-48 bg-white text-black min-h-screen pb-40">
+    <div className="pt-24 md:pt-48 bg-white text-black min-h-screen pb-20 md:pb-40">
       {/* Hero Section */}
-      <section className="px-6 md:px-12 max-w-[1800px] mx-auto mb-40">
-        <span className="text-[10px] font-bold tracking-[0.6em] uppercase text-[#ed1c24] mb-8 block">BUILDING YOUR DIGITAL ADVANTAGE</span>
-        <h1 className="font-heading text-7xl md:text-[10vw] font-bold tracking-tighter uppercase leading-[0.8] mb-12 text-[#0B4F6C]">
+      <section className="px-4 sm:px-6 md:px-12 max-w-[1800px] mx-auto mb-20 md:mb-40">
+        <span className="text-[8px] sm:text-[9px] md:text-[10px] font-bold tracking-[0.6em] uppercase text-[#ed1c24] mb-6 md:mb-8 block">BUILDING YOUR DIGITAL ADVANTAGE</span>
+        <h1 className="font-heading text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-bold tracking-tighter uppercase leading-[0.8] mb-6 md:mb-12 text-[#0B4F6C]">
           Service <br /><span className="text-[#ed1c24] italic">Portfolio</span>
         </h1>
-        <p className="text-3xl md:text-4xl text-black leading-[1.1] font-medium mb-8 tracking-tight max-w-4xl">
+        <p className="text-xl sm:text-2xl md:text-3xl lg:text-4xl text-black leading-[1.1] font-medium mb-4 md:mb-8 tracking-tight max-w-4xl">
           What We Build - Key Deliverables
         </p>
-        <p className="text-xl text-black/80 leading-relaxed max-w-3xl">
+        <p className="text-base sm:text-lg md:text-xl text-black/80 leading-relaxed max-w-3xl">
           Our services are engineered to build and sustain your company's core digital strength. We focus on creating high-performance, stable systems that eliminate operational friction and accelerate your growth.
         </p>
       </section>
 
       {/* Services Grid */}
-      <section className="py-40 bg-[#f8f9fa] border-y border-black/5">
-        <div className="max-w-[1800px] mx-auto px-6 md:px-12">
-          <div className="grid md:grid-cols-3 gap-12">
+      <section className="py-20 md:py-40 bg-[#f8f9fa] border-y border-black/5">
+        <div className="max-w-[1800px] mx-auto px-4 sm:px-6 md:px-12">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-12">
             {SERVICES.map((service, i) => (
-              <div key={service.id} className="group relative overflow-hidden bg-white shadow-sm hover:shadow-2xl transition-all duration-700 p-12">
+              <div key={service.id} className="group relative overflow-hidden bg-white shadow-sm hover:shadow-2xl transition-all duration-700 p-6 md:p-12">
                 <div className="mb-8">
                   <div className="flex items-center gap-4 mb-6">
-                    <span className="text-[10px] font-bold tracking-[0.4em] uppercase text-[#ed1c24]">{service.number}</span>
+                    <span className="text-[8px] sm:text-[9px] md:text-[10px] font-bold tracking-[0.4em] uppercase text-[#ed1c24]">{service.number}</span>
                     <div className="w-12 h-[1px] bg-[#0B4F6C]/20"></div>
                   </div>
                   <div className="mb-6">
-                    <span className="text-[10px] font-bold tracking-[0.4em] uppercase text-[#0B4F6C]/60 block mb-2">
+                    <span className="text-[8px] sm:text-[9px] md:text-[10px] font-bold tracking-[0.4em] uppercase text-[#0B4F6C]/60 block mb-2">
                       {i === 0 ? 'Innovation' : i === 1 ? 'Quality & Accessibility' : 'Client Success'}
                     </span>
                   </div>
-                  <h3 className="font-heading text-2xl font-bold uppercase tracking-tight text-[#0B4F6C] group-hover:text-[#ed1c24] transition-colors mb-6">
+                  <h3 className="font-heading text-lg sm:text-xl md:text-2xl font-bold uppercase tracking-tight text-[#0B4F6C] group-hover:text-[#ed1c24] transition-colors mb-6">
                     {service.title}
                   </h3>
-                  <p className="text-black/80 leading-relaxed mb-8">
+                  <p className="text-black/80 leading-relaxed mb-8 text-sm md:text-base">
                     {service.description}
                   </p>
                 </div>
                 
                 <button
-                  onClick={() => toggleService(service.id)}
-                  className="flex items-center gap-2 text-[10px] font-bold tracking-[0.4em] uppercase text-[#0B4F6C] hover:text-[#ed1c24] transition-colors"
+                  onClick={() => setExpandedService(expandedService === service.id ? null : service.id)}
+                  className="flex items-center gap-2 text-[8px] sm:text-[9px] md:text-[10px] font-bold tracking-[0.4em] uppercase text-[#0B4F6C] hover:text-[#ed1c24] transition-colors"
                 >
                   Expand
                   {expandedService === service.id ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
@@ -59,14 +59,14 @@ const ServicesPage: React.FC = () => {
                 
                 {expandedService === service.id && (
                   <div className="mt-8 pt-8 border-t border-black/10">
-                    <h4 className="font-heading text-sm font-bold uppercase tracking-tight text-[#0B4F6C] mb-4">
+                    <h4 className="font-heading text-xs md:text-sm font-bold uppercase tracking-tight text-[#0B4F6C] mb-4">
                       Key Features
                     </h4>
                     <div className="space-y-3">
                       {service.features.map((feature, j) => (
                         <div key={j} className="flex items-center gap-3">
-                          <div className="w-1.5 h-1.5 bg-[#ed1c24] rounded-full"></div>
-                          <span className="text-sm text-black/70">{feature}</span>
+                          <div className="w-1.5 h-1.5 bg-[#ed1c24] rounded-full flex-shrink-0"></div>
+                          <span className="text-xs md:text-sm text-black/70">{feature}</span>
                         </div>
                       ))}
                     </div>
@@ -79,21 +79,21 @@ const ServicesPage: React.FC = () => {
       </section>
 
       {/* Methodology Section */}
-      <section className="py-40 bg-white">
-        <div className="max-w-[1800px] mx-auto px-6 md:px-12">
-          <div className="mb-24 text-center">
-            <h2 className="font-heading text-6xl md:text-8xl font-bold tracking-tighter uppercase leading-[0.85] text-[#0B4F6C] mb-8">
-              Our Signature <br /><span className="text-[#ed1c24]/30 italic">Development Framework</span>
+      <section className="py-20 md:py-40 bg-white">
+        <div className="max-w-[1800px] mx-auto px-4 sm:px-6 md:px-12">
+          <div className="mb-12 md:mb-24 text-center">
+            <h2 className="font-heading text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-bold tracking-tighter uppercase leading-[0.85] text-[#0B4F6C] mb-6 md:mb-8">
+              Our Signature <br /><span className="text-[#ed1c24]/70 italic">Development Framework</span>
             </h2>
-            <p className="text-2xl text-black/80 leading-relaxed max-w-3xl mx-auto mb-4">
+            <p className="text-lg sm:text-xl md:text-2xl text-black/80 leading-relaxed max-w-3xl mx-auto mb-2 md:mb-4">
               MARGINZ Agile-Enterprise Methodology (MAE)
             </p>
-            <p className="text-lg text-black/70 leading-relaxed max-w-2xl mx-auto">
+            <p className="text-base sm:text-lg text-black/70 leading-relaxed max-w-2xl mx-auto">
               Our methodology ensures that complexity is translated into a simple, high-velocity build cycle.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-12">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-12">
             {[
               {
                 phase: '01',
@@ -113,23 +113,23 @@ const ServicesPage: React.FC = () => {
                 description: 'Our QA process extends beyond traditional testing to include comprehensive validation of business requirements.',
                 features: ['Automated Testing Framework', 'User Acceptance Testing', 'Performance Optimization', 'Security Validation']
               }
-            ].map((phase, i) => (
-              <div key={i} className="p-12 bg-[#f9f9f9] border-l-8 border-[#0B4F6C] hover:bg-white transition-all group shadow-sm hover:shadow-2xl">
+            ].map((phase) => (
+              <div key={phase.phase} className="p-6 md:p-12 bg-[#f9f9f9] border-l-8 border-[#0B4F6C] hover:bg-white transition-all group shadow-sm hover:shadow-2xl">
                 <div className="flex items-center gap-4 mb-8">
-                  <span className="text-[10px] font-bold tracking-[0.4em] uppercase text-[#ed1c24]">Phase {phase.phase}</span>
+                  <span className="text-[8px] sm:text-[9px] md:text-[10px] font-bold tracking-[0.4em] uppercase text-[#ed1c24]">Phase {phase.phase}</span>
                   <div className="w-12 h-[1px] bg-[#0B4F6C]/20"></div>
                 </div>
-                <h3 className="font-heading text-2xl font-bold uppercase tracking-tight text-[#0B4F6C] group-hover:text-[#ed1c24] transition-colors mb-6">
+                <h3 className="font-heading text-lg sm:text-xl md:text-2xl font-bold uppercase tracking-tight text-[#0B4F6C] group-hover:text-[#ed1c24] transition-colors mb-6">
                   {phase.title}
                 </h3>
-                <p className="text-black/80 leading-relaxed mb-8">
+                <p className="text-black/80 leading-relaxed mb-8 text-sm md:text-base">
                   {phase.description}
                 </p>
                 <div className="space-y-3">
                   {phase.features.map((feature, j) => (
                     <div key={j} className="flex items-center gap-3">
-                      <div className="w-1.5 h-1.5 bg-[#ed1c24] rounded-full"></div>
-                      <span className="text-sm text-black/70">{feature}</span>
+                      <div className="w-1.5 h-1.5 bg-[#ed1c24] rounded-full flex-shrink-0"></div>
+                      <span className="text-xs md:text-sm text-black/70">{feature}</span>
                     </div>
                   ))}
                 </div>
