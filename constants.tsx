@@ -1,78 +1,65 @@
 
 import React from 'react';
-import { Service, Project, Job, TeamMember, ClientReview } from './types';
+import { Service, Project, Job, TeamMember, ClientReview, HeroSlide } from './types';
 
-export const HERO_SLIDES = [
+export const HERO_SLIDES: HeroSlide[] = [
   { 
-    label: "BRIXNET",
-    title: "Professional Excellence", 
-    text: "Fostering innovation and professional service delivery in modern workspaces" 
+    label: "MARGINZ",
+    title: "The Architect", 
+    subtitle: "Agility & Technology",
+    text: "Engineering Enterprise Liberation. Scalable Systems. Zero Friction." 
   },
   { 
-    label: "BRIXNET",
-    title: "Delivering TRUST", 
-    text: "Your Preferred Knowledge Transfer Partner in Technology Excellence" 
+    label: "MARGINZ",
+    title: "The Quality Anchor", 
+    subtitle: "Quality & Reliability",
+    text: "Quality-First Development. Where High Performance is the Minimum Standard." 
   },
   { 
-    label: "BRIXNET",
-    title: "Technology Innovation Hub", 
-    text: "Enabling excellence through cutting-edge software solutions and training" 
+    label: "MARGINZ",
+    title: "The Strategist", 
+    subtitle: "ROI & Business Outcome",
+    text: "Beyond Code: Delivering Measurable MARGINS on Digital Investment." 
   },
   { 
-    label: "BRIXNET",
-    title: "Software Development Excellence", 
-    text: "Premium Knowledge Transfer for software engineering and development teams" 
-  },
-  { 
-    label: "BRIXNET",
-    title: "Modern Workspace Solutions", 
-    text: "Enabling young minds with lasting efficiency through technology and innovation" 
-  },
-  { 
-    label: "BRIXNET",
-    title: "Startup & Enterprise Ready", 
-    text: "Scalable knowledge transfer solutions for growing technology companies" 
+    label: "MARGINZ",
+    title: "The Specialist", 
+    subtitle: "Expertise & Future-Proofing",
+    text: "The MERN Stack Masters. Deploying Enterprise-Grade Digital Foundations." 
   }
 ];
 
 export const SERVICES: Service[] = [
   {
-    id: 'atd',
+    id: 'cdp',
     number: '01',
-    title: 'Advance Technology Domain',
-    description: 'Premium knowledge transfer on advance technology, enablement programs, vendor neutral programs, OEM enablement & certification programs, CLOUD, SDx, Infrastructure automation tools, learning & development domain',
-    features: ['OEM Enablement & Certification Programs', 'CLOUD & SDx Technologies', 'Infrastructure Automation Tools', 'Vendor Neutral Programs']
+    title: 'Core Digital Platforms',
+    description: 'We build the essential, proprietary software your business runs on, ensuring stability and a smooth user experience across all devices.',
+    features: ['Custom Web Applications', 'Enterprise Software Solutions', 'Progressive Web Apps', 'Cross-Platform Development', 'API Development & Integration', 'Database Architecture']
   },
   {
-    id: 'ld',
+    id: 'aia',
     number: '02',
-    title: 'Learning & Development Domain',
-    description: 'Enabling potential minds and its creativity through fostering programs on noetic science, leadership & management, coaching, business skills, behavioural skills and cross culture',
-    features: ['SOSE / Noetic Science', 'Business Skill', 'Leadership and Management', 'Behavioural Skill Program', 'Coaching', 'Cross-Culture']
+    title: 'Advanced Intelligence & Automation',
+    description: 'We integrate cutting-edge intelligence and efficient infrastructure to help your business operate smarter and faster.',
+    features: ['AI/ML Integration', 'Process Automation', 'Cloud Infrastructure', 'DevOps & CI/CD', 'Performance Optimization', 'Scalable Architecture']
   },
   {
-    id: 'dcg',
+    id: 'sms',
     number: '03',
-    title: 'Domain Compliances & Governance',
-    description: "To validate 'RESKILL TO STAY RELEVANT' in the evolving world of applied science, we render services for project management and expert, ITIL-SERIES, JIRA Project management, CEM, CISA, CISM, CISSP, certified data centre professional and specialist and certified IT management",
-    features: ['ITIL-SERIES', 'JIRA Project Management', 'CISA', 'CISM', 'CISSP', 'Certified Data Centre Professional', 'Certified IT Management']
-  },
-  {
-    id: 'psd',
-    number: '04',
-    title: 'Professional Service Domain',
-    description: 'The magnitude maximizes to render services on Infosec, VA/PT, mobile security scanning and reporting, baseline auditing, IT infrastructure auditing, readiness auditing, comprehensive auditing, knowledge management services, project management & implementation program',
-    features: ['Infosec & VA/PT Services', 'Mobile Security Scanning', 'Baseline Auditing', 'IT Infrastructure Auditing', 'Knowledge Management Services', 'Project Management']
+    title: 'Strategic Modernization & Support',
+    description: 'We modernize outdated systems, ensure all platforms connect seamlessly, and provide disciplined, long-term support to maintain optimal performance.',
+    features: ['Legacy System Modernization', 'System Integration', 'Technical Consulting', 'Maintenance & Support', 'Security Audits', 'Performance Monitoring']
   }
 ];
 
 export const PROJECTS: Project[] = [
-  { id: '1', title: 'Knowledge Transfer Programs', category: 'Training', image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=800&auto=format&fit=crop', year: '2024' },
-  { id: '2', title: 'OEM Certification Programs', category: 'Certification', image: 'https://images.unsplash.com/photo-1497215842964-222b430dc094?q=80&w=800&auto=format&fit=crop', year: '2024' },
-  { id: '3', title: 'Leadership Development', category: 'L&D', image: 'https://images.unsplash.com/photo-1595658658481-d53d3f999875?q=80&w=800&auto=format&fit=crop', year: '2023' },
-  { id: '4', title: 'IT Infrastructure Auditing', category: 'Professional Services', image: 'https://images.unsplash.com/photo-1563986768609-322da13575f3?q=80&w=800&auto=format&fit=crop', year: '2023' },
-  { id: '5', title: 'Cyber Security Training', category: 'Security', image: 'https://images.unsplash.com/photo-1497366811353-6870744d04b2?q=80&w=800&auto=format&fit=crop', year: '2023' },
-  { id: '6', title: 'Cloud Enablement', category: 'Technology', image: 'https://images.unsplash.com/photo-1524813686514-a57563d77965?q=80&w=800&auto=format&fit=crop', year: '2024' }
+  { id: '1', title: 'Brix-ERP', category: 'Enterprise Resource Planning', image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop', year: '2024', description: 'An enterprise solution designed to manage employees with role-based access' },
+  { id: '2', title: 'Assessment Portal', category: 'Web Application', image: 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?q=80&w=800&auto=format&fit=crop', year: '2024', description: 'An online portal for students to attend tests assigned by admins based on batches' },
+  { id: '3', title: 'Qdotz Website', category: 'Website', image: 'https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?q=80&w=800&auto=format&fit=crop', year: '2024', description: 'A responsive corporate website developed for Qdotz' },
+  { id: '4', title: 'Cricinfo Clone Prototype', category: 'Web Application', image: 'https://images.unsplash.com/photo-1531415074968-036ba1b575da?q=80&w=800&auto=format&fit=crop', year: '2023', description: 'A prototype replicating Cricinfo features with real-time cricket scores, sports news, blogs, and match updates' },
+  { id: '5', title: 'PwC Prototype Website', category: 'Website', image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop', year: '2023', description: 'A responsive prototype for PwC to showcase global client data' },
+  { id: '6', title: 'BookyMet Mobile Application', category: 'Mobile Application', image: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?q=80&w=800&auto=format&fit=crop', year: '2024', description: 'A hybrid Mobile application for booking the turf by dynamic and live booking systems' }
 ];
 
 export const JOBS: Job[] = [
@@ -99,14 +86,21 @@ export const JOBS: Job[] = [
 ];
 
 export const CLIENTS = [
-  { name: 'Extreme Networks', logo: 'https://logo.clearbit.com/extremenetworks.com' },
-  { name: 'Wipro', logo: 'https://logo.clearbit.com/wipro.com' },
-  { name: 'Infosys', logo: 'https://logo.clearbit.com/infosys.com' },
-  { name: 'TCS', logo: 'https://logo.clearbit.com/tcs.com' },
-  { name: 'Tech Mahindra', logo: 'https://logo.clearbit.com/techmahindra.com' },
-  { name: 'HCL Technologies', logo: 'https://logo.clearbit.com/hcltech.com' },
-  { name: 'Accenture', logo: 'https://logo.clearbit.com/accenture.com' },
-  { name: 'Cognizant', logo: 'https://logo.clearbit.com/cognizant.com' }
+  { name: 'Microsoft', logo: 'https://logo.clearbit.com/microsoft.com' },
+  { name: 'Google', logo: 'https://logo.clearbit.com/google.com' },
+  { name: 'Amazon', logo: 'https://logo.clearbit.com/amazon.com' },
+  { name: 'IBM', logo: 'https://logo.clearbit.com/ibm.com' },
+  { name: 'Oracle', logo: 'https://logo.clearbit.com/oracle.com' },
+  { name: 'Salesforce', logo: 'https://logo.clearbit.com/salesforce.com' },
+  { name: 'Adobe', logo: 'https://logo.clearbit.com/adobe.com' },
+  { name: 'SAP', logo: 'https://logo.clearbit.com/sap.com' }
+];
+
+export const STATS = [
+  { label: 'Project Mandates', value: '70+' },
+  { label: 'Operational Uptime', value: '99.99%' },
+  { label: 'Industry Verticals', value: '8' },
+  { label: 'Partner Companies', value: '100+' }
 ];
 
 export const PARTNERS = [
@@ -183,27 +177,48 @@ export const TEAM_MEMBERS = [
 
 export const CLIENT_REVIEWS = [
   {
-    id: 'arjun-mehta',
-    name: 'Arjun Mehta',
-    company: 'Tech Solutions Pvt Ltd',
-    position: 'IT Director',
+    id: 'jayachandran',
+    name: 'Mr. Jayachandran',
+    company: 'BRiX',
+    position: 'Director',
     rating: 5,
-    review: 'BRiX Network transformed our team\'s capabilities through their exceptional knowledge transfer programs. The expertise and professionalism of their team is unmatched.'
+    project: 'BRiX-ERP (Enterprise Resource Planning)',
+    review: 'Their unified ERP solution delivered an 85% reduction in manual processing time. They truly eliminated our core operational friction.'
   },
   {
-    id: 'sunita-agarwal',
-    name: 'Sunita Agarwal',
-    company: 'Innovation Corp',
-    position: 'Learning & Development Head',
+    id: 'monishwaran',
+    name: 'Mr. Monishwaran',
+    company: 'Coreverse',
+    position: 'Director',
     rating: 5,
-    review: 'Outstanding training delivery and comprehensive curriculum. Their team\'s deep technical knowledge and teaching methodology exceeded our expectations.'
+    project: 'Assessment Portal (Web Application)',
+    review: 'We achieved a 95% time reduction in result processing, allowing us to scale student intake by 10X. Unparalleled speed and precision.'
   },
   {
-    id: 'rohit-gupta',
-    name: 'Rohit Gupta',
-    company: 'Digital Enterprises',
-    position: 'CTO',
+    id: 'abutahir',
+    name: 'Mr. AbuTahir',
+    company: 'Imagevite Technologies',
+    position: 'Director',
     rating: 5,
-    review: 'Professional, knowledgeable, and results-driven. BRiX Network\'s team helped us achieve our certification goals efficiently and effectively.'
+    project: 'BookyMet Mobile Application',
+    review: 'The dynamic booking app delivered a 20% increase in turf utilization and zero errors. A resilient platform impacting our bottom line.'
+  },
+  {
+    id: 'thayagaraj',
+    name: 'Dr. K. Thayagaraj',
+    company: 'Qdotz',
+    position: 'CEO',
+    rating: 5,
+    project: 'Qdotz Website (Corporate Website)',
+    review: 'The new corporate website led to a 35% increase in qualified organic traffic within three months. Exceptional mastery in high-performing digital assets.'
+  },
+  {
+    id: 'innovation-lead',
+    name: 'Innovation Lead',
+    company: 'Financial Technology Sector',
+    position: 'Innovation Lead',
+    rating: 5,
+    project: 'PwC Prototype Website & Cricinfo Clone',
+    review: 'MARGINZ accelerated our prototype timelines by 40%, validating their Transcendental Stack Mastery. They deliver high-velocity solutions.'
   }
 ];

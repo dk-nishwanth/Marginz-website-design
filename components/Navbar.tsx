@@ -21,9 +21,8 @@ const Navbar: React.FC<NavbarProps> = ({ activePage, setActivePage }) => {
   const menuItems = [
     { name: 'Home', id: 'home' },
     { name: 'About', id: 'about' },
-    { name: 'Our Team', id: 'team' },
-    { name: 'Our Program', id: 'program' },
-    { name: 'Career', id: 'career' },
+    { name: 'Services', id: 'services' },
+    { name: 'Projects', id: 'projects' },
     { name: 'Contact', id: 'contact' }
   ];
 
@@ -38,14 +37,12 @@ const Navbar: React.FC<NavbarProps> = ({ activePage, setActivePage }) => {
       <nav className={`fixed top-0 left-0 w-full z-[100] transition-all duration-700 px-6 py-6 md:px-12 ${isScrolled ? 'bg-white/95 backdrop-blur-xl py-4 border-b border-black/5' : ''}`}>
         <div className="max-w-[1800px] mx-auto flex justify-between items-center">
           <button onClick={() => handleNav('home')} className="flex items-center gap-4 group">
-            <div className="h-10 md:h-12 w-auto flex items-center">
-              {/* Replace with actual logo image if hosted, otherwise using a high-fidelity placeholder styled after the brand */}
-              <img 
-                src="/brix-logo.png" 
-                alt="BRIX Network" 
-                className="h-full object-contain brightness-100 contrast-125"
-              />
-            </div>
+            <img 
+              src="/marginz logo.jpg" 
+              className="h-8 md:h-10 w-auto object-contain" 
+              style={{ maxWidth: '200px' }}
+              alt="MARGINZ" 
+            />
           </button>
 
           <div className="flex items-center gap-12">
@@ -54,7 +51,7 @@ const Navbar: React.FC<NavbarProps> = ({ activePage, setActivePage }) => {
                 <button 
                   key={item.id}
                   onClick={() => handleNav(item.id)}
-                  className={`text-[10px] font-bold tracking-[0.4em] uppercase transition-all duration-500 hover:text-[#165a72] ${activePage === item.id ? 'text-[#165a72]' : 'text-black/60'}`}
+                  className={`text-[10px] font-bold tracking-[0.4em] uppercase transition-all duration-500 hover:text-[#0B4F6C] ${activePage === item.id ? 'text-[#0B4F6C]' : 'text-black/60'}`}
                 >
                   {item.name}
                 </button>
@@ -65,7 +62,7 @@ const Navbar: React.FC<NavbarProps> = ({ activePage, setActivePage }) => {
               onClick={() => setIsOpen(true)}
               className="flex items-center gap-4 group lg:hidden"
             >
-              <div className="w-12 h-12 bg-[#165a72]/5 rounded-full flex items-center justify-center group-hover:bg-[#165a72] group-hover:text-white transition-all duration-500">
+              <div className="w-12 h-12 bg-[#0B4F6C]/5 rounded-full flex items-center justify-center group-hover:bg-[#0B4F6C] group-hover:text-white transition-all duration-500">
                 <Menu size={18} />
               </div>
             </button>
@@ -82,10 +79,10 @@ const Navbar: React.FC<NavbarProps> = ({ activePage, setActivePage }) => {
             className="fixed inset-0 z-[200] bg-white text-black flex flex-col"
           >
             <div className="p-12 flex justify-between items-center">
-               <img src="/brix-logo.png" alt="BRIX" className="h-12" />
+               <img src="/marginz logo.jpg" alt="MARGINZ" className="h-10" />
                <button 
                 onClick={() => setIsOpen(false)}
-                className="w-16 h-16 bg-[#165a72] text-white rounded-full flex items-center justify-center hover:bg-[#ed1c24] transition-colors duration-500 shadow-xl"
+                className="w-16 h-16 bg-[#0B4F6C] text-white rounded-full flex items-center justify-center hover:bg-[#ed1c24] transition-colors duration-500 shadow-xl"
               >
                 <X size={28} />
               </button>
@@ -100,7 +97,7 @@ const Navbar: React.FC<NavbarProps> = ({ activePage, setActivePage }) => {
                     initial={{ x: 50, opacity: 0 }}
                     animate={{ x: 0, opacity: 1 }}
                     transition={{ delay: 0.1 * i, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-                    className={`block font-heading text-6xl md:text-[10vw] font-bold tracking-tighter text-left uppercase leading-none hover:text-[#165a72] transition-all duration-500 ${activePage === item.id ? 'text-[#165a72]' : 'text-[#165a72]/40'}`}
+                    className={`block font-heading text-6xl md:text-[10vw] font-bold tracking-tighter text-left uppercase leading-none hover:text-[#0B4F6C] transition-all duration-500 ${activePage === item.id ? 'text-[#0B4F6C]' : 'text-[#0B4F6C]/40'}`}
                   >
                     {item.name}
                   </motion.button>

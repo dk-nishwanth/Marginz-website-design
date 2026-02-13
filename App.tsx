@@ -4,9 +4,8 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import HomePage from './pages/HomePage';
 import AboutPage from './pages/AboutPage';
-import TeamPage from './pages/TeamPage';
-import ProgramPage from './pages/ProgramPage';
-import CareerPage from './pages/CareerPage';
+import ServicesPage from './pages/ServicesPage';
+import ProjectsPage from './pages/ProjectsPage';
 import ContactPage from './pages/ContactPage';
 import { motion } from 'framer-motion';
 import { Loader2 } from 'lucide-react';
@@ -27,15 +26,21 @@ const App: React.FC = () => {
   if (loading) {
     return (
       <div className="fixed inset-0 bg-white flex flex-col items-center justify-center z-[9999]">
-        <motion.div initial={{ opacity: 0, scale: 0.98 }} animate={{ opacity: 1, scale: 1 }} className="text-center w-full max-w-sm px-12">
-          <img src="/brix-logo.png" className="h-24 mx-auto mb-16" alt="BRIX" />
+        <motion.div initial={{ opacity: 0, scale: 0.98 }} animate={{ opacity: 1, scale: 1 }} className="text-center w-full max-w-md px-12">
+          <div className="mb-16 flex items-center justify-center">
+            <img 
+              src="/marginz logo.jpg" 
+              className="h-20 w-auto object-contain" 
+              alt="MARGINZ" 
+            />
+          </div>
           <div className="w-full h-[1px] bg-black/5 relative mb-4">
             <motion.div 
-              className="absolute left-0 top-0 h-full bg-[#165a72]" 
+              className="absolute left-0 top-0 h-full bg-[#0B4F6C]" 
               style={{ width: `${progress}%` }}
             />
           </div>
-          <div className="flex justify-between items-center text-[9px] font-bold tracking-[0.5em] text-[#165a72]/60 uppercase">
+          <div className="flex justify-between items-center text-[9px] font-bold tracking-[0.5em] text-[#0B4F6C]/60 uppercase">
             <span>Systems Online</span>
             <span>{progress}%</span>
           </div>
@@ -50,12 +55,10 @@ const App: React.FC = () => {
         return <HomePage setActivePage={setActivePage} />;
       case 'about':
         return <AboutPage />;
-      case 'team':
-        return <TeamPage />;
-      case 'program':
-        return <ProgramPage />;
-      case 'career':
-        return <CareerPage />;
+      case 'services':
+        return <ServicesPage />;
+      case 'projects':
+        return <ProjectsPage />;
       case 'contact':
         return <ContactPage />;
       default:

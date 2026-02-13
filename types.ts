@@ -5,6 +5,14 @@ export interface Project {
   category: string;
   image: string;
   year: string;
+  description: string;
+}
+
+export interface HeroSlide {
+  label: string;
+  title: string;
+  subtitle: string;
+  text: string;
 }
 
 export interface Service {
@@ -43,6 +51,7 @@ export interface ClientReview {
   position: string;
   rating: number;
   review: string;
+  project: string;
 }
 
 
