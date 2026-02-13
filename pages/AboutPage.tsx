@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { motion, AnimatePresence, useInView } from 'framer-motion';
 import { ArrowUpRight } from 'lucide-react';
 
 const KernMetadata = ({ label, value }: { label: string; value: string }) => (
@@ -9,23 +10,60 @@ const KernMetadata = ({ label, value }: { label: string; value: string }) => (
 );
 
 const AboutPage: React.FC = () => {
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    setIsVisible(true);
+  }, []);
+
+  const ScrollSection = ({ children }: { children: React.ReactNode }) => {
+    const ref = React.useRef(null);
+    const isInView = useInView(ref, { once: true, margin: "-100px" });
+
+    return (
+      <motion.div
+        ref={ref}
+        initial={{ opacity: 0, y: 50 }}
+        animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+      >
+        {children}
+      </motion.div>
+    );
+  };
   return (
-    <div className="pt-24 md:pt-48 bg-white text-black min-h-screen">
+    <div className="pt-24 md:pt-48 bg-white text-black min-h-screen animate-in fade-in duration-1000">
       {/* Hero Section */}
       <section className="px-4 sm:px-6 md:px-12 max-w-[1800px] mx-auto mb-20 md:mb-40">
-        <div className="flex gap-2 md:gap-4 mb-8 md:mb-16 flex-wrap">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="flex gap-2 md:gap-4 mb-8 md:mb-16 flex-wrap"
+        >
           <KernMetadata label="ABOUT US" value="MARGINZ Solutions" />
           <KernMetadata label="EXPERTISE" value="MERN Stack Masters" />
-        </div>
-            <h2 className="font-heading text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-bold tracking-tighter uppercase leading-[0.85] text-[#0B4F6C] mb-6 md:mb-8">
-              Deploying <br /><span className="text-black/30">Enterprise-Grade</span><br /><span className="text-[#ed1c24] italic">Digital Foundations</span>
-            </h2>
-        <p className="text-xl sm:text-2xl md:text-3xl lg:text-4xl text-black leading-[1.1] font-medium mb-4 md:mb-8 tracking-tight max-w-4xl">
+        </motion.div>
+        <motion.h1
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.1 }}
+          className="font-heading text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-bold tracking-tighter uppercase leading-[0.8] mb-6 md:mb-12 text-[#0B4F6C]"
+        >
+          Deploying <br /><span className="text-black/30">Enterprise-Grade</span><br /><span className="text-[#ed1c24] italic">Digital Foundations</span>
+        </motion.h1>
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="text-xl sm:text-2xl md:text-3xl lg:text-4xl text-black leading-[1.1] font-medium mb-4 md:mb-8 tracking-tight max-w-4xl"
+        >
           The Architecture of Unassailable Digital Resilience
-        </p>
+        </motion.p>
       </section>
 
       {/* Story Section */}
+      <ScrollSection>
       <section className="py-20 md:py-40 bg-[#f8f9fa] border-y border-black/5">
         <div className="max-w-[1800px] mx-auto px-4 sm:px-6 md:px-12">
           <div className="grid lg:grid-cols-12 gap-8 md:gap-24">
@@ -76,8 +114,10 @@ const AboutPage: React.FC = () => {
           </div>
         </div>
       </section>
+      </ScrollSection>
 
       {/* Core Principles Section */}
+      <ScrollSection>
       <section className="py-20 md:py-40 bg-white">
         <div className="max-w-[1800px] mx-auto px-4 sm:px-6 md:px-12">
           <div className="mb-12 md:mb-24 text-center">
@@ -127,8 +167,10 @@ const AboutPage: React.FC = () => {
           </div>
         </div>
       </section>
+      </ScrollSection>
 
       {/* Technology Stack Section */}
+      <ScrollSection>
       <section className="py-20 md:py-40 bg-[#f8f9fa] border-y border-black/5">
         <div className="max-w-[1800px] mx-auto px-4 sm:px-6 md:px-12">
           <div className="grid lg:grid-cols-2 gap-8 md:gap-24 items-center">
@@ -166,8 +208,10 @@ const AboutPage: React.FC = () => {
           </div>
         </div>
       </section>
+      </ScrollSection>
 
       {/* Methodology Section */}
+      <ScrollSection>
       <section className="py-20 md:py-40 bg-white">
         <div className="max-w-[1800px] mx-auto px-4 sm:px-6 md:px-12">
           <div className="mb-12 md:mb-24 text-center">
@@ -201,8 +245,10 @@ const AboutPage: React.FC = () => {
           </div>
         </div>
       </section>
+      </ScrollSection>
 
       {/* CTA Section */}
+      <ScrollSection>
       <section className="py-20 md:py-40 bg-[#f8f9fa] border-t border-black/5 text-center">
         <div className="max-w-5xl mx-auto px-4 sm:px-6">
           <h2 className="font-heading text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-bold tracking-tighter uppercase mb-8 md:mb-16 text-[#0B4F6C] leading-[0.8]">
@@ -217,6 +263,7 @@ const AboutPage: React.FC = () => {
           </button>
         </div>
       </section>
+      </ScrollSection>
     </div>
   );
 };

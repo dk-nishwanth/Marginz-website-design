@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { motion, useInView } from 'framer-motion';
 import { Mail, Phone, MapPin, Clock } from 'lucide-react';
 
 const ContactPage: React.FC = () => {
@@ -17,23 +18,49 @@ const ContactPage: React.FC = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission
     console.log('Contact form submitted:', formData);
   };
 
+  const ScrollSection = ({ children }: { children: React.ReactNode }) => {
+    const ref = React.useRef(null);
+    const isInView = useInView(ref, { once: true, margin: "-100px" });
+
+    return (
+      <motion.div
+        ref={ref}
+        initial={{ opacity: 0, y: 50 }}
+        animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+      >
+        {children}
+      </motion.div>
+    );
+  };
+
   return (
-    <div className="pt-24 md:pt-48 bg-white text-black min-h-screen pb-20 md:pb-40">
+    <div className="pt-24 md:pt-48 bg-white text-black min-h-screen pb-20 md:pb-40 animate-in fade-in duration-1000">
       {/* Hero Section */}
       <section className="px-4 sm:px-6 md:px-12 max-w-[1800px] mx-auto mb-20 md:mb-40">
-        <h1 className="font-heading text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-bold tracking-tighter uppercase leading-[0.8] mb-6 md:mb-12 text-[#0B4F6C]">
+        <motion.h1
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="font-heading text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-bold tracking-tighter uppercase leading-[0.8] mb-6 md:mb-12 text-[#0B4F6C]"
+        >
           Connect <br /><span className="text-[#ed1c24] italic">With Us</span>
-        </h1>
-        <p className="text-xl sm:text-2xl md:text-3xl lg:text-4xl text-black leading-[1.1] font-medium mb-4 md:mb-8 tracking-tight max-w-4xl">
+        </motion.h1>
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.1 }}
+          className="text-xl sm:text-2xl md:text-3xl lg:text-4xl text-black leading-[1.1] font-medium mb-4 md:mb-8 tracking-tight max-w-4xl"
+        >
           Ready to transform your organization through knowledge transfer? Let's discuss your requirements.
-        </p>
+        </motion.p>
       </section>
 
       {/* Contact Information & Form Section */}
+      <ScrollSection>
       <section className="px-4 sm:px-6 md:px-12 max-w-[1800px] mx-auto grid lg:grid-cols-2 gap-8 md:gap-24 mb-20 md:mb-40">
         {/* Contact Information */}
         <div className="space-y-8 md:space-y-16">
@@ -187,8 +214,10 @@ const ContactPage: React.FC = () => {
           </div>
         </div>
       </section>
+      </ScrollSection>
 
       {/* Map Section */}
+      <ScrollSection>
       <section className="py-20 md:py-40 bg-[#f8f9fa] border-t border-black/5 relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" alt="Map Background" className="w-full h-full object-cover" />
@@ -235,6 +264,7 @@ const ContactPage: React.FC = () => {
           </div>
         </div>
       </section>
+      </ScrollSection>
     </div>
   );
 };
