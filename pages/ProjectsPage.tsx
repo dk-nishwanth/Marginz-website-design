@@ -1,24 +1,9 @@
 import React from 'react';
-import { motion, useInView } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { PROJECTS, CLIENT_REVIEWS } from '../constants';
 import { Star } from 'lucide-react';
 
 const ProjectsPage: React.FC = () => {
-  const ScrollSection = ({ children }: { children: React.ReactNode }) => {
-    const ref = React.useRef(null);
-    const isInView = useInView(ref, { once: true, margin: "-100px" });
-
-    return (
-      <motion.div
-        ref={ref}
-        initial={{ opacity: 0, y: 50 }}
-        animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
-        transition={{ duration: 0.8, ease: "easeOut" }}
-      >
-        {children}
-      </motion.div>
-    );
-  };
   return (
     <div className="pt-24 md:pt-48 bg-white text-black min-h-screen pb-20 md:pb-40 animate-in fade-in duration-1000">
       {/* Hero Section */}
@@ -50,7 +35,6 @@ const ProjectsPage: React.FC = () => {
       </section>
 
       {/* Projects Grid */}
-      <ScrollSection>
       <section className="py-20 md:py-40 bg-[#f8f9fa] border-y border-black/5">
         <div className="max-w-[1800px] mx-auto px-4 sm:px-6 md:px-12">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-12">
@@ -80,10 +64,8 @@ const ProjectsPage: React.FC = () => {
           </div>
         </div>
       </section>
-      </ScrollSection>
 
       {/* Client Testimonials */}
-      <ScrollSection>
       <section className="py-20 md:py-40 bg-white">
         <div className="max-w-[1800px] mx-auto px-4 sm:px-6 md:px-12">
           <div className="mb-12 md:mb-24 text-center">
@@ -102,10 +84,10 @@ const ProjectsPage: React.FC = () => {
                 <div className="absolute top-0 right-0 w-24 h-24 opacity-10 group-hover:opacity-20 transition-opacity">
                   <img 
                     src={`https://images.unsplash.com/photo-${
-                      review.id === '1' ? '1472099645785-5658abf4ff4e' : 
-                      review.id === '2' ? '1494790108755-2616c5e29c8c' : 
-                      review.id === '3' ? '1507003211169-0a1dd7228f2d' :
-                      review.id === '4' ? '1560250097-0b93528c311a' :
+                      review.id === 'jayachandran' ? '1472099645785-5658abf4ff4e' : 
+                      review.id === 'monishwaran' ? '1494790108755-2616c5e29c8c' : 
+                      review.id === 'abutahir' ? '1507003211169-0a1dd7228f2d' :
+                      review.id === 'thayagaraj' ? '1560250097-0b93528c311a' :
                       '1519085360753-af0119f7c3e6'
                     }?w=400&q=80`}
                     alt={review.name} 
@@ -146,7 +128,6 @@ const ProjectsPage: React.FC = () => {
           </div>
         </div>
       </section>
-      </ScrollSection>
     </div>
   );
 };

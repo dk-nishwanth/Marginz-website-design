@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { motion, AnimatePresence, useInView } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowUpRight } from 'lucide-react';
 import { HERO_SLIDES, STATS, CLIENTS, SERVICES, PROJECTS } from '../constants';
 
@@ -23,22 +23,6 @@ const HomePage: React.FC<HomePageProps> = ({ setActivePage }) => {
     }, 6000);
     return () => clearInterval(interval);
   }, []);
-
-  const ScrollSection = ({ children }: { children: React.ReactNode }) => {
-    const ref = React.useRef(null);
-    const isInView = useInView(ref, { once: true, margin: "-100px" });
-
-    return (
-      <motion.div
-        ref={ref}
-        initial={{ opacity: 0, y: 50 }}
-        animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
-        transition={{ duration: 0.8, ease: "easeOut" }}
-      >
-        {children}
-      </motion.div>
-    );
-  };
 
   return (
     <div className="animate-in fade-in duration-1000">
@@ -133,7 +117,6 @@ const HomePage: React.FC<HomePageProps> = ({ setActivePage }) => {
       </section>
 
       {/* About Section */}
-      <ScrollSection>
       <section className="py-20 md:py-40 bg-[#f9fafa]">
         <div className="max-w-[1800px] mx-auto px-4 sm:px-6 md:px-12">
           <div className="grid lg:grid-cols-2 gap-8 md:gap-16 items-center">
@@ -141,7 +124,7 @@ const HomePage: React.FC<HomePageProps> = ({ setActivePage }) => {
             <div className="relative group order-2 lg:order-1">
               <div className="absolute -inset-4 bg-[#0B4F6C]/10 rounded-3xl blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
               <div className="relative aspect-[4/3] overflow-hidden shadow-2xl border border-black/5">
-                <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&q=80" alt="MARGINZ Team" className="w-full h-full object-cover brightness-110" />
+                <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&q=80" alt="MARGINZ Team" className="w-full h-full object-cover brightness-110" />
               </div>
             </div>
 
@@ -177,10 +160,8 @@ const HomePage: React.FC<HomePageProps> = ({ setActivePage }) => {
           </div>
         </div>
       </section>
-      </ScrollSection>
 
       {/* Services Section */}
-      <ScrollSection>
       <section className="py-20 md:py-40 bg-[#f8f9fa] border-t border-black/5">
         <div className="max-w-[1800px] mx-auto px-4 sm:px-6 md:px-12">
           <div className="mb-12 md:mb-24 text-center">
@@ -224,10 +205,8 @@ const HomePage: React.FC<HomePageProps> = ({ setActivePage }) => {
           </div>
         </div>
       </section>
-      </ScrollSection>
 
       {/* Projects Preview */}
-      <ScrollSection>
       <section className="py-20 md:py-40 bg-white border-t border-black/5">
         <div className="max-w-[1800px] mx-auto px-4 sm:px-6 md:px-12">
           <div className="mb-12 md:mb-24">
@@ -271,13 +250,11 @@ const HomePage: React.FC<HomePageProps> = ({ setActivePage }) => {
           </div>
         </div>
       </section>
-      </ScrollSection>
 
       {/* CTA Section */}
-      <ScrollSection>
       <section className="py-20 md:py-60 bg-[#f8f9fa] border-t border-black/5 text-center relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">
-          <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=1920&q=80" alt="Background" className="w-full h-full object-cover" />
+          <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=1920&q=80" alt="Background" className="w-full h-full object-cover" />
         </div>
         <div className="max-w-5xl mx-auto px-4 sm:px-6 relative z-10">
           <span className="text-[8px] sm:text-[9px] md:text-[10px] font-bold tracking-[1.2em] text-[#0B4F6C]/60 mb-8 md:mb-16 block uppercase">GET CONSULTATION</span>
@@ -296,7 +273,6 @@ const HomePage: React.FC<HomePageProps> = ({ setActivePage }) => {
           </button>
         </div>
       </section>
-      </ScrollSection>
     </div>
   );
 };

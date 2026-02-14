@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import { motion, AnimatePresence, useInView } from 'framer-motion';
+import React from 'react';
+import { motion } from 'framer-motion';
 import { ArrowUpRight } from 'lucide-react';
 
 const KernMetadata = ({ label, value }: { label: string; value: string }) => (
@@ -10,27 +10,6 @@ const KernMetadata = ({ label, value }: { label: string; value: string }) => (
 );
 
 const AboutPage: React.FC = () => {
-  const [isVisible, setIsVisible] = useState(false);
-
-  useEffect(() => {
-    setIsVisible(true);
-  }, []);
-
-  const ScrollSection = ({ children }: { children: React.ReactNode }) => {
-    const ref = React.useRef(null);
-    const isInView = useInView(ref, { once: true, margin: "-100px" });
-
-    return (
-      <motion.div
-        ref={ref}
-        initial={{ opacity: 0, y: 50 }}
-        animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
-        transition={{ duration: 0.8, ease: "easeOut" }}
-      >
-        {children}
-      </motion.div>
-    );
-  };
   return (
     <div className="pt-24 md:pt-48 bg-white text-black min-h-screen animate-in fade-in duration-1000">
       {/* Hero Section */}
@@ -63,7 +42,6 @@ const AboutPage: React.FC = () => {
       </section>
 
       {/* Story Section */}
-      <ScrollSection>
       <section className="py-20 md:py-40 bg-[#f8f9fa] border-y border-black/5">
         <div className="max-w-[1800px] mx-auto px-4 sm:px-6 md:px-12">
           <div className="grid lg:grid-cols-12 gap-8 md:gap-24">
@@ -87,7 +65,7 @@ const AboutPage: React.FC = () => {
               <div className="space-y-6 md:space-y-12">
                 <div className="aspect-[4/3] bg-[#0B4F6C] overflow-hidden shadow-2xl relative group">
                   <img 
-                    src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&q=80" 
+                    src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&q=80" 
                     alt="MARGINZ Team" 
                     className="w-full h-full object-cover brightness-110 group-hover:scale-105 transition-transform duration-700"
                   />
@@ -114,10 +92,8 @@ const AboutPage: React.FC = () => {
           </div>
         </div>
       </section>
-      </ScrollSection>
 
       {/* Core Principles Section */}
-      <ScrollSection>
       <section className="py-20 md:py-40 bg-white">
         <div className="max-w-[1800px] mx-auto px-4 sm:px-6 md:px-12">
           <div className="mb-12 md:mb-24 text-center">
@@ -167,16 +143,14 @@ const AboutPage: React.FC = () => {
           </div>
         </div>
       </section>
-      </ScrollSection>
 
       {/* Technology Stack Section */}
-      <ScrollSection>
       <section className="py-20 md:py-40 bg-[#f8f9fa] border-y border-black/5">
         <div className="max-w-[1800px] mx-auto px-4 sm:px-6 md:px-12">
           <div className="grid lg:grid-cols-2 gap-8 md:gap-24 items-center">
             <div className="aspect-[4/3] overflow-hidden shadow-2xl order-2 lg:order-1">
               <img 
-                src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&q=80" 
+                src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=800&q=80" 
                 alt="Technology" 
                 className="w-full h-full object-cover brightness-110"
               />
@@ -208,10 +182,8 @@ const AboutPage: React.FC = () => {
           </div>
         </div>
       </section>
-      </ScrollSection>
 
       {/* Methodology Section */}
-      <ScrollSection>
       <section className="py-20 md:py-40 bg-white">
         <div className="max-w-[1800px] mx-auto px-4 sm:px-6 md:px-12">
           <div className="mb-12 md:mb-24 text-center">
@@ -237,7 +209,7 @@ const AboutPage: React.FC = () => {
             </div>
             <div className="aspect-[4/3] bg-[#0B4F6C]/5 overflow-hidden shadow-xl">
               <img 
-                src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=800&q=80" 
+                src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80" 
                 alt="Framework" 
                 className="w-full h-full object-cover brightness-110"
               />
@@ -245,10 +217,8 @@ const AboutPage: React.FC = () => {
           </div>
         </div>
       </section>
-      </ScrollSection>
 
       {/* CTA Section */}
-      <ScrollSection>
       <section className="py-20 md:py-40 bg-[#f8f9fa] border-t border-black/5 text-center">
         <div className="max-w-5xl mx-auto px-4 sm:px-6">
           <h2 className="font-heading text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-bold tracking-tighter uppercase mb-8 md:mb-16 text-[#0B4F6C] leading-[0.8]">
@@ -263,7 +233,6 @@ const AboutPage: React.FC = () => {
           </button>
         </div>
       </section>
-      </ScrollSection>
     </div>
   );
 };
